@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Psicología con Bel — PanCM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Archivo:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="devicebar">
+    <span>PanCM — prototipo</span>
+    <div class="btns">
+      <button data-device="desktop">Escritorio</button>
+      <button data-device="mobile">Móvil</button>
+    </div>
+  </div>
+
+  <div class="shell">
+    <header class="site">
+      <a href="index.html" class="logo">PanCM<span class="tag">— expediente</span></a>
+      <nav class="main">
+        <a href="proyectos.html">Proyectos</a>
+        <a href="equipo.html">Equipo</a>
+        <a href="nosotros.html">Cómo trabajamos</a>
+        <a href="contacto.html" class="cta">Escribir</a>
+      </nav>
+    </header>
+
+    <main>
+      <section style="padding:44px 28px 24px">
+        <a href="proyectos.html" class="back-link">← Todos los expedientes</a>
+        <div class="eyebrow" style="margin-top:16px">Caso Nº 01</div>
+        <h1 class="case-hero-title">Psicología con Bel</h1>
+        <p class="case-lead">Isabel Aguilar atiende psicoterapia clínica en Punta Arenas y online, y coordinaba cada hora por mensajes. Construimos el sitio público, el sistema de reserva y el panel con el que administra su consulta completa.</p>
+        <a href="https://psicologiaconbel.cl/" target="_blank" rel="noopener noreferrer" class="case-url">psicologiaconbel.cl ↗</a>
+      </section>
+
+      <section class="stat-grid">
+        <div class="stat-box"><div class="label">Año</div><div class="value">2025</div></div>
+        <div class="stat-box"><div class="label">Rol</div><div class="value">Diseño y desarrollo</div></div>
+        <div class="stat-box"><div class="label">Stack</div><div class="value">React · Express · Postgres</div></div>
+        <div class="stat-box"><div class="label">Estado</div><div class="value green">En línea</div></div>
+      </section>
+
+      <section style="padding:0 28px 32px">
+        <img class="hero-photo" style="height:330px;border-radius:8px" src="src/assets/psicoterapia2.webp" alt="Sesión de psicoterapia" />
+      </section>
+
+      <section style="padding:0 28px 44px">
+        <div class="feature-grid">
+          <div>
+            <h2>El paciente reserva solo</h2>
+            <p>Elige categoría, día y bloque disponible. El selector consulta la agenda real, así que no existe la doble reserva.</p>
+          </div>
+          <div>
+            <h2>Ella administra su consulta</h2>
+            <p>Panel privado para abrir o bloquear horas, mantener fichas de pacientes y editar servicios y precios.</p>
+          </div>
+          <div>
+            <h2>Cuentas y contenido</h2>
+            <p>Ingreso con verificación en dos pasos, publicaciones y opiniones administrables, fotos alojadas fuera de la base de datos.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site">
+      <span>PanCM · grupo de desarrollo web</span>
+      <span>hola@pancm.cl</span>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

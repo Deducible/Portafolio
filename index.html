@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>PanCM — expediente</title>
+<title>PanCM — desarrollo de software</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Archivo:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,58 +21,76 @@
 
   <div class="shell">
     <header class="site">
-      <a href="index.html" class="logo">PanCM<span class="tag">— expediente</span></a>
+      <a href="index.html" class="logo">
+        <span class="name">PanCM</span>
+        <span class="tag">Desarrollo de software</span>
+      </a>
       <nav class="main">
         <a href="proyectos.html">Proyectos</a>
         <a href="equipo.html">Equipo</a>
-        <a href="nosotros.html">Cómo trabajamos</a>
-        <a href="contacto.html" class="cta">Escribir</a>
+        <a href="nosotros.html">Metodología</a>
+        <a href="contacto.html" class="cta">Contacto</a>
       </nav>
     </header>
 
     <main>
-      <section style="padding:56px 28px 20px;position:relative;--r0:-1deg;--rf:0deg;animation:settle 0.55s ease-out both">
-        <div class="eyebrow">Expediente activo · abierto en 2025</div>
-        <h1>Le construimos a un negocio el sistema que le faltaba.</h1>
-        <p class="lead">PanCM es un grupo de desarrollo. Cada proyecto que hacemos queda archivado aquí: lo que nos pidieron, lo que construimos y quién de nosotros lo hizo.</p>
+      <section style="padding:80px 40px 56px;border-bottom:1px solid var(--border)">
+        <div class="eyebrow">Grupo de desarrollo · Chile</div>
+        <h1>Software a medida para negocios que aún se administran a mano.</h1>
+        <p class="lead">Diseñamos y construimos sitios y sistemas de gestión completos: la cara pública que ve el cliente y el panel privado con el que se opera el negocio. Cada integrante mantiene además su propio perfil profesional.</p>
         <div class="actions">
-          <a href="proyecto.html" class="btn">Abrir el primer expediente</a>
-          <span class="scribble">↳ mira cómo quedó</span>
+          <a href="proyecto.html" class="btn">Ver caso de estudio</a>
+          <a href="equipo.html" class="btn-outline">Conocer al equipo</a>
+        </div>
+        <div class="stat-strip">
+          <div class="cell">
+            <div class="label">Proyectos en producción</div>
+            <div class="value">01</div>
+          </div>
+          <div class="cell">
+            <div class="label">Integrantes</div>
+            <div class="value">04</div>
+          </div>
+          <div class="cell">
+            <div class="label">Stack principal</div>
+            <div class="value text">React · Node · PostgreSQL</div>
+          </div>
+          <div class="cell">
+            <div class="label">Disponibilidad</div>
+            <div class="value text">Abierta para nuevos encargos</div>
+          </div>
         </div>
       </section>
 
-      <section style="padding:36px 28px 44px;--r0:-2deg;--rf:0deg;animation:settle 0.55s ease-out 0.08s both">
-        <a href="proyecto.html" class="case-card">
-          <div class="tape"></div>
-          <div class="row">
+      <section style="padding:56px 40px;border-bottom:1px solid var(--border)">
+        <div class="section-head">
+          <h2>Caso de estudio</h2>
+          <a href="proyectos.html">Todos los proyectos →</a>
+        </div>
+        <a href="proyecto.html" class="case-feature">
+          <img src="src/assets/consulta.webp" alt="Consulta de Psicología con Bel" onerror="this.style.background='#EEF0F2'" />
+          <div class="body">
             <div class="info">
-              <div class="label">Caso Nº 01</div>
-              <h2>Psicología con Bel</h2>
-              <p>Sitio, reserva de horas y panel de administración para una consulta de psicología en Punta Arenas.</p>
+              <div class="meta">2025 · Salud · Sitio + sistema de agenda</div>
+              <h3>Psicología con Bel</h3>
+              <p>Reserva de horas para pacientes y panel de administración para una consulta de psicología clínica en Punta Arenas.</p>
             </div>
-            <span class="status-pill">En línea</span>
+            <span class="status-pill">En producción</span>
           </div>
-          <img src="src/assets/consulta.webp" alt="Consulta de Psicología con Bel" onerror="this.style.background='repeating-linear-gradient(135deg,#E2D6BE 0 1px,transparent 1px 15px)';this.style.border='1px dashed #D4C7AC'" />
         </a>
       </section>
 
-      <section style="padding:0 28px 44px;--r0:-1deg;--rf:0deg;animation:settle 0.55s ease-out 0.16s both">
-        <div class="section-label">Quiénes están en el expediente</div>
-        <div data-member-grid></div>
-      </section>
-
-      <section style="padding:0 28px 60px;--r0:-1deg;--rf:0deg;animation:settle 0.55s ease-out 0.22s both">
-        <div class="open-case">
-          <div class="badge">Caso Nº 02 · abierto</div>
-          <h2>Este expediente todavía no tiene nombre.</h2>
-          <p>Si tu negocio todavía se administra por WhatsApp y planillas sueltas, ese es el problema que resolvemos.</p>
-          <a href="contacto.html" class="btn" style="transform:none">Abrir el caso</a>
+      <section style="padding:56px 40px">
+        <div class="section-head">
+          <h2>Equipo</h2>
+          <a href="equipo.html">Ver perfiles completos →</a>
         </div>
+        <div data-member-grid></div>
       </section>
     </main>
 
     <footer class="site">
-      <span>PanCM · grupo de desarrollo web</span>
+      <span>PanCM · Desarrollo de software · Chile</span>
       <span>hola@pancm.cl</span>
     </footer>
   </div>

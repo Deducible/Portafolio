@@ -7,7 +7,7 @@ const MIEMBROS = [
     correo: 'nombre01@pancm.cl',
     ubicacion: 'Santiago, Chile',
     disponibilidad: 'Disponible para trabajos',
-    aporte: 'Interfaz y flujo de reserva',
+    aporte: 'Interfaz pública y flujo de reserva de horas.',
     stack: ['React 19', 'TypeScript', 'Tailwind', 'Vite', 'Figma'],
     experiencia: [
       { anio: '2025', titulo: 'Psicología con Bel', detalle: 'Interfaz pública en React + Tailwind y el selector de horarios.' },
@@ -41,7 +41,7 @@ const MIEMBROS = [
     correo: 'nombre03@pancm.cl',
     ubicacion: 'Santiago, Chile',
     disponibilidad: 'Disponible para trabajos',
-    aporte: 'Investigación y diseño de pantallas',
+    aporte: 'Investigación con la clienta y diseño de pantallas.',
     stack: ['Figma', 'Prototipado', 'Investigación', 'React', 'Tailwind'],
     experiencia: [
       { anio: '2025', titulo: 'Psicología con Bel', detalle: 'Definición del flujo y diseño de las pantallas.' },
@@ -56,7 +56,7 @@ const MIEMBROS = [
     correo: 'nombre04@pancm.cl',
     ubicacion: 'Santiago, Chile',
     disponibilidad: 'Disponible para trabajos',
-    aporte: 'Coordinación con la clienta y pruebas',
+    aporte: 'Coordinación del proyecto y pruebas previas al lanzamiento.',
     stack: ['Git', 'GitHub Actions', 'Playwright', 'Soporte'],
     experiencia: [
       { anio: '2025', titulo: 'Psicología con Bel', detalle: 'Coordinación del proyecto y pruebas previas al lanzamiento.' },
@@ -65,11 +65,9 @@ const MIEMBROS = [
   }
 ];
 
-const ROTS = [-1.5, 1.2, -0.8, 1.6];
-
 const PROYECTOS = [
-  { caso: 'Caso Nº 01', nombre: 'Psicología con Bel', estado: 'Cerrado', resumen: 'Reserva de horas para pacientes y panel privado de agenda para la profesional.', href: 'proyecto.html' },
-  { caso: 'Caso Nº 02', nombre: 'Expediente abierto', estado: 'Abierto', resumen: 'Espacio reservado para el siguiente encargo del grupo.', href: 'proyecto.html' }
+  { anio: '2025', nombre: 'Psicología con Bel', estado: 'En producción', resumen: 'Reserva de horas para pacientes y panel privado de agenda para la profesional.', href: 'proyecto.html' },
+  { anio: '2026', nombre: 'Próximo encargo', estado: 'En preparación', resumen: 'Espacio reservado para el siguiente proyecto del grupo.', href: 'proyecto.html' }
 ];
 
 function initDeviceToggle() {
@@ -89,40 +87,51 @@ function initDeviceToggle() {
   apply('desktop');
 }
 
-function renderMemberGrid(container, { wide = false } = {}) {
-  if (!container) return;
-  container.classList.add('member-grid');
-  if (wide) container.classList.add('wide');
-
-  container.innerHTML = MIEMBROS.map((m, i) => {
-    const rot = ROTS[i % ROTS.length];
-    const avatar = m.foto
-      ? `<img class="avatar" src="${m.foto}" alt="${m.nombre}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'pin'}))" />`
-      : `<div class="pin"></div>`;
-    return `
-      <a class="member-card" href="perfil.html?id=${m.id}" style="transform:rotate(${rot}deg)">
-        ${avatar}
-        <div class="name">${m.nombre}</div>
-        <div class="role">${m.rol}</div>
-        <div class="link">ver su ficha →</div>
-      </a>
-    `;
-  }).join('');
+function avatarMarkup(m, cls) {
+  return m.foto
+    ? `<img class="${cls}" src="${m.foto}" alt="${m.nombre}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'pin'}))" />`
+    : `<div class="pin"></div>`;
 }
 
-function renderProjectGrid(container) {
+function renderMemberGrid(container) {
   if (!container) return;
-  const rots = [-0.9, 0.8];
-  container.innerHTML = PROYECTOS.map((p, i) => `
-    <a class="project-card" href="${p.href}" style="transform:rotate(${rots[i % rots.length]}deg)">
-      <div class="row">
-        <div>
-          <div class="caso">${p.caso}</div>
-          <div class="nombre">${p.nombre}</div>
-        </div>
-        <span class="estado">${p.estado}</span>
+  container.classList.add('member-grid');
+  container.innerHTML = MIEMBROS.map((m) => `
+    <a class="member-card" href="perfil.html?id=${m.id}">
+      <div class="who">
+        ${avatarMarkup(m, 'avatar')}
+        <div class="name">${m.nombre}</div>
       </div>
-      <div class="resumen">${p.resumen}</div>
+      <div class="role">${m.rol}</div>
+      <div class="link">Ver perfil →</div>
+    </a>
+  `).join('');
+}
+
+function renderTeamList(container) {
+  if (!container) return;
+  container.innerHTML = MIEMBROS.map((m) => `
+    <a class="team-row" href="perfil.html?id=${m.id}">
+      ${avatarMarkup(m, 'avatar')}
+      <span>
+        <span class="nombre">${m.nombre}</span>
+        <span class="rol">${m.rol}</span>
+      </span>
+      <span class="link">Ver perfil →</span>
+    </a>
+  `).join('');
+}
+
+function renderProjectList(container) {
+  if (!container) return;
+  container.innerHTML = PROYECTOS.map((p) => `
+    <a class="list-row" href="${p.href}">
+      <span class="anio">${p.anio}</span>
+      <span>
+        <span class="nombre">${p.nombre}</span>
+        <span class="resumen">${p.resumen}</span>
+      </span>
+      <span class="estado">${p.estado}</span>
     </a>
   `).join('');
 }
@@ -150,7 +159,7 @@ function renderProfile() {
   };
 
   set('[data-profile-nombre]', m.nombre);
-  set('[data-profile-rol]', `${m.rol} · integrante de PanCM`);
+  set('[data-profile-rol]', `${m.rol} · PanCM`);
   set('[data-profile-bio]', m.bio);
 
   const expEl = document.querySelector('[data-profile-experiencia]');
@@ -171,7 +180,6 @@ function renderProfile() {
     stackEl.innerHTML = m.stack.map((s) => `<span>${s}</span>`).join('');
   }
 
-  set('[data-profile-datos]', '');
   const datosEl = document.querySelector('[data-profile-datos]');
   if (datosEl) {
     datosEl.innerHTML = `${m.correo}<br />${m.ubicacion}<br />${m.disponibilidad}`;
@@ -194,7 +202,7 @@ function renderProfile() {
 document.addEventListener('DOMContentLoaded', () => {
   initDeviceToggle();
   renderMemberGrid(document.querySelector('[data-member-grid]'));
-  renderMemberGrid(document.querySelector('[data-member-grid-wide]'), { wide: true });
-  renderProjectGrid(document.querySelector('[data-project-grid]'));
+  renderTeamList(document.querySelector('[data-team-list]'));
+  renderProjectList(document.querySelector('[data-project-list]'));
   renderProfile();
 });

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cómo trabajamos — PanCM</title>
+<title>Metodología — PanCM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Archivo:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,38 +21,50 @@
 
   <div class="shell">
     <header class="site">
-      <a href="index.html" class="logo">PanCM<span class="tag">— expediente</span></a>
+      <a href="index.html" class="logo">
+        <span class="name">PanCM</span>
+        <span class="tag">Desarrollo de software</span>
+      </a>
       <nav class="main">
         <a href="proyectos.html">Proyectos</a>
         <a href="equipo.html">Equipo</a>
-        <a href="nosotros.html">Cómo trabajamos</a>
-        <a href="contacto.html" class="cta">Escribir</a>
+        <a href="nosotros.html">Metodología</a>
+        <a href="contacto.html" class="cta">Contacto</a>
       </nav>
     </header>
 
     <main>
-      <section style="padding:48px 28px 20px">
-        <h1 class="page-title" style="max-width:16ch">Cómo trabajamos</h1>
-        <p class="case-lead">PanCM empezó con un encargo concreto: una amiga psicóloga necesitaba una página donde sus pacientes pudieran tomar hora. Terminamos construyendo también el sistema con el que administra su consulta, y de ahí salió la forma de trabajar que usamos hoy.</p>
+      <section style="padding:64px 40px 32px;border-bottom:1px solid var(--border)">
+        <h1 class="page-title" style="max-width:18ch">Metodología</h1>
+        <p class="page-sub wide" style="font-size:17px">PanCM empezó con un encargo concreto: una psicóloga necesitaba una página donde sus pacientes pudieran tomar hora. Terminamos construyendo también el sistema con el que administra su consulta, y de ahí salió la forma de trabajar que usamos hoy.</p>
       </section>
-      <section class="value-grid">
-        <div class="value-card" style="transform:rotate(-0.6deg)">
-          <h2>Entendemos el día</h2>
-          <p>Antes de escribir código miramos cómo funciona hoy el negocio: quién agenda, quién confirma, dónde se pierde el tiempo.</p>
+      <section style="padding:0">
+        <div class="phase-row">
+          <span class="fase">Fase 01</span>
+          <span>
+            <span class="titulo">Diagnóstico de la operación</span>
+            <span class="detalle">Antes de escribir código revisamos cómo funciona hoy el negocio: quién agenda, quién confirma y dónde se pierde el tiempo.</span>
+          </span>
         </div>
-        <div class="value-card" style="transform:rotate(0.5deg)">
-          <h2>Construimos las dos caras</h2>
-          <p>El sitio que ve el cliente y el panel que usa quien atiende. Uno sin el otro no resuelve nada.</p>
+        <div class="phase-row">
+          <span class="fase">Fase 02</span>
+          <span>
+            <span class="titulo">Construcción de las dos caras</span>
+            <span class="detalle">El sitio que ve el cliente y el panel que usa quien atiende. Uno sin el otro no resuelve el problema.</span>
+          </span>
         </div>
-        <div class="value-card" style="transform:rotate(-0.3deg)">
-          <h2>Quedamos disponibles</h2>
-          <p>Después del lanzamiento seguimos atendiendo ajustes, dudas y mejoras.</p>
+        <div class="phase-row">
+          <span class="fase">Fase 03</span>
+          <span>
+            <span class="titulo">Soporte posterior al lanzamiento</span>
+            <span class="detalle">Después de publicar seguimos atendiendo ajustes, dudas y mejoras del sistema.</span>
+          </span>
         </div>
       </section>
     </main>
 
     <footer class="site">
-      <span>PanCM · grupo de desarrollo web</span>
+      <span>PanCM · Desarrollo de software · Chile</span>
       <span>hola@pancm.cl</span>
     </footer>
   </div>

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ficha del equipo — PanCM</title>
+<title>Perfil — PanCM</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Archivo:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -21,17 +21,20 @@
 
   <div class="shell">
     <header class="site">
-      <a href="index.html" class="logo">PanCM<span class="tag">— expediente</span></a>
+      <a href="index.html" class="logo">
+        <span class="name">PanCM</span>
+        <span class="tag">Desarrollo de software</span>
+      </a>
       <nav class="main">
         <a href="proyectos.html">Proyectos</a>
         <a href="equipo.html">Equipo</a>
-        <a href="nosotros.html">Cómo trabajamos</a>
-        <a href="contacto.html" class="cta">Escribir</a>
+        <a href="nosotros.html">Metodología</a>
+        <a href="contacto.html" class="cta">Contacto</a>
       </nav>
     </header>
 
     <main>
-      <section style="padding:44px 28px 8px">
+      <section style="padding:56px 40px 32px;border-bottom:1px solid var(--border)">
         <a href="equipo.html" class="back-link">← Equipo</a>
         <div class="profile-head">
           <div class="who">
@@ -43,28 +46,28 @@
           </div>
           <div class="profile-cta">
             <a href="#" class="primary">Descargar CV en PDF</a>
-            <a href="contacto.html" class="secondary">Escribirle</a>
+            <a href="contacto.html" class="secondary">Contactar</a>
           </div>
         </div>
         <p class="profile-bio" data-profile-bio></p>
       </section>
 
       <section class="profile-grid">
-        <div class="profile-panel">
+        <div>
           <div class="panel-label">Experiencia</div>
           <div data-profile-experiencia></div>
         </div>
-        <div class="profile-panel">
+        <div>
           <div class="panel-label">Herramientas</div>
           <div class="stack-tags" data-profile-stack></div>
-          <div class="panel-label spaced">Datos</div>
+          <div class="panel-label spaced">Contacto</div>
           <div class="datos-list" data-profile-datos></div>
           <a href="#" data-profile-linkedin class="linkedin-link" target="_blank" rel="noopener noreferrer"></a>
         </div>
       </section>
 
-      <section style="padding:20px 28px 60px">
-        <div class="section-label">Qué hizo en el proyecto</div>
+      <section style="padding:0 40px 64px">
+        <div class="panel-label">Aporte en proyectos</div>
         <a href="proyecto.html" class="what-did">
           <span>
             <span class="title">Psicología con Bel</span>
@@ -76,7 +79,7 @@
     </main>
 
     <footer class="site">
-      <span>PanCM · grupo de desarrollo web</span>
+      <span>PanCM · Desarrollo de software · Chile</span>
       <span>hola@pancm.cl</span>
     </footer>
   </div>
